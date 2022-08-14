@@ -119,7 +119,7 @@ class RecipeController extends AbstractController
         );
 
 
-        return $this->redirectToRoute('app_ingredient');
+        return $this->redirectToRoute('app_recipe');
     }
 
 }
