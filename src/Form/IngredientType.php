@@ -2,8 +2,7 @@
 
 namespace App\Form;
 
-use Assert\Length;
-use Assert\NotBlank;
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Entity\Ingredient;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -27,6 +26,10 @@ class IngredientType extends AbstractType
                 'label_attr' => [
                     'class' => 'form-label mt-4'
                 ],
+                'constraints' => [
+                    new Assert\Length(['min' => 2, 'max' => 50]),
+                    new Assert\NotBlank()
+                ]
             ])
             ->add('price', MoneyType::class, [
                 'attr' => [

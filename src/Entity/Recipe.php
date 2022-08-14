@@ -45,9 +45,8 @@ class Recipe
     private ?string $description;
 
     #[ORM\Column]
-    #[Assert\Positive()]
     #[Assert\LessThan(1001)]
-    private ?float $price;
+    private float $price;
 
     #[ORM\Column]
     private bool $isFavorite;

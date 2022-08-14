@@ -14,6 +14,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class IngredientController extends AbstractController
 {
+    /**
+     * This controller display all ingredients
+     * @param IngredientRepository $repository
+     * @param Request $request
+     * @param PaginatorInterface $paginator
+     * @return Response
+     */
+
     #[Route('/ingredient', name: 'app_ingredient')]
     public function index(IngredientRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
@@ -53,6 +61,10 @@ class IngredientController extends AbstractController
         return $this->render('ingredient/_new.html.twig', [
             'form' => $form->createView(),
         ]);
+
+    /**
+     * This controller allows us to create a new recipe
+     */
     }
 
     #[Route('/ingredient/edit/{id}', name: 'app_ingredient_edit', methods: ['GET', 'POST'])]
