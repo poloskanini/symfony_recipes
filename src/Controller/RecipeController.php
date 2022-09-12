@@ -69,7 +69,7 @@ class RecipeController extends AbstractController
     }
 
     /**
-     * This controller allows us to create a new recipe
+     * This controller allows us to modify a new recipe
      */
 
     #[Route('/recette/edit/{id}', name: 'app_recipe_edit', methods: ['GET', 'POST'])]
